@@ -9,17 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* Фон документа с вертикальной полоской слева */
 body {
+  background: #f0f0f0;
   margin: 0;
-  padding: 0;
+  padding: 30px;
   font-family: 'Source Serif 4', serif;
-  background: url('stripe.png') no-repeat left top; /* картинка с полоской */
-  background-size: auto 100%; /* растягиваем по высоте документа */
-  background-color: #f0f0f0; /* цвет фона на остальной части */
 }
 
-/* Контейнер с контентом */
 .page {
   max-width: 800px;
   margin: auto;
@@ -28,9 +24,29 @@ body {
   border: 1px solid #cfcfcf;
   text-align: center;
   position: relative;
-  z-index: 1; /* чтобы был поверх фоновой картинки */
+  display: flex; /* для вертикальной полоски слева */
 }
 
+/* Вертикальная полоска слева */
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px; /* ширина полоски */
+  height: 100%;
+  background: url('stripe.png') no-repeat center top;
+  background-size: cover;
+  opacity: 0.2; /* полупрозрачность */
+  pointer-events: none; /* чтобы не мешала кликам */
+}
+
+.content {
+  width: 100%;
+  z-index: 1; /* чтобы текст и картинки были поверх полоски */
+}
+
+/* Логотип и шильдик */
 .logo img {
   max-width: 180px;
   margin-bottom: 30px;
@@ -93,52 +109,54 @@ h1 {
 <body>
 
 <div class="page">
+  <div class="content">
 
-  <div class="logo">
-    <img src="emblem.png" alt="Герб">
+    <div class="logo">
+      <img src="emblem.png" alt="Герб">
+    </div>
+
+    <h1>Таможенный терминал «Бенякони»</h1>
+
+    <div class="block">
+      <strong>Ваш номер очереди:</strong><br>
+      8
+    </div>
+
+    <div class="block">
+      <strong>Перед вами:</strong><br>
+      7
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="block">
+      <strong>Зарегистрирован:</strong><br>
+      8:13 / 18.12.2025
+    </div>
+
+    <div class="block">
+      <strong>Зарезервированное время:</strong><br>
+      11:30 / 18.12.2025
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="block">
+      <strong>Товар:</strong><br>
+      Mercedes-Benz CLA 250
+    </div>
+
+    <div class="block">
+      <strong>Описание:</strong><br>
+      WDD5J4HB4LN036171
+    </div>
+
+    <div class="footer">
+      <span>Информация предоставлена в электронном виде</span>
+      <img src="info-icon.png" alt="Печать">
+    </div>
+
   </div>
-
-  <h1>Таможенный терминал «Бенякони»</h1>
-
-  <div class="block">
-    <strong>Ваш номер очереди:</strong><br>
-    8
-  </div>
-
-  <div class="block">
-    <strong>Перед вами:</strong><br>
-    7
-  </div>
-
-  <div class="separator"></div>
-
-  <div class="block">
-    <strong>Зарегистрирован:</strong><br>
-    8:13 / 18.12.2025
-  </div>
-
-  <div class="block">
-    <strong>Зарезервированное время:</strong><br>
-    11:30 / 18.12.2025
-  </div>
-
-  <div class="separator"></div>
-
-  <div class="block">
-    <strong>Товар:</strong><br>
-    Mercedes-Benz CLA 250
-  </div>
-
-  <div class="block">
-    <strong>Описание:</strong><br>
-    WDD5J4HB4LN036171
-  </div>
-
-  <div class="footer">
-    <span>Информация предоставлена в электронном виде</span>
-    <img src="info-icon.png" alt="Печать">
-  </div>
-
 </div>
 
 </body>
