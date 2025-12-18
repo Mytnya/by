@@ -30,7 +30,7 @@ body {
   background-image: url('stripe.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; /* 💻 desktop */
+  background-size: cover; /* DESKTOP */
 
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@ body {
 /* ===== LOGO ===== */
 .logo img {
   width: 100%;
-  max-width: 140px;
+  max-width: 140px; /* уменьшено на 20% */
   height: auto;
   margin-bottom: 24px;
 }
@@ -88,20 +88,21 @@ h1 {
 
 .footer img {
   width: 100%;
-  max-width: 340px;
+  max-width: 340px; /* -15% */
   height: auto;
 }
 
-/* ===== 📱 MOBILE — БЕЗ ПУСТОТ СВЕРХУ/СНИЗУ ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
   body {
     padding: 8px;
   }
 
+  /* ФОН ДЛЯ ТЕЛЕФОНА — растягиваем по ширине и высоте */
   .page {
-    background-size: auto 100%;   /* 👈 ЗАПОЛНЯЕМ ПО ВЫСОТЕ */
-    background-position: center top;
+    background-size: 100% 100%;
+    background-position: center;
   }
 
   .separator {
