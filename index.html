@@ -1,13 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Таможенный терминал «Бенякони»</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  background: #f0f0f0;
+  margin: 0;
+  padding: 30px;
+  font-family: 'Source Serif 4', serif;
+}
+
+/* Центральный блок с полоской */
 .page {
   max-width: 800px;
   margin: auto;
   background: #ffffff;
-  padding: 50px 40px;
   border: 1px solid #cfcfcf;
-  display: flex; /* для полоски слева и контента справа */
+  display: flex; /* полоска слева + контент */
   position: relative;
+  min-height: 100vh; /* растягиваем блок на всю высоту экрана */
 }
 
+/* Вертикальная полоска слева */
 .stripe {
   width: 60px; /* ширина полоски */
   flex-shrink: 0;
@@ -17,10 +37,142 @@
 .stripe img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* растянуть на всю высоту блока */
+  object-fit: cover; /* растянуть по высоте блока */
 }
 
+/* Контент блока */
 .content {
-  flex-grow: 1; /* остальной контент занимает оставшееся место */
+  flex-grow: 1; /* занимает оставшееся место */
+  text-align: center;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Логотип */
+.logo img {
+  max-width: 180px;
+  margin-bottom: 30px;
+}
+
+/* Заголовок */
+h1 {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+/* Блоки информации */
+.block {
+  margin-bottom: 18px;
+  font-size: 17px;
+}
+
+.block strong {
+  font-weight: 600;
+}
+
+.separator {
+  margin: 30px 0;
+  border-top: 1px solid #cccccc;
+}
+
+/* Футер */
+.footer {
+  margin-top: 35px;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   text-align: center;
 }
+
+.footer img {
+  max-width: 400px;
+  height: auto;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  .content {
+    padding: 30px 20px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .block {
+    font-size: 16px;
+  }
+  .footer img {
+    max-width: 200px;
+  }
+  .stripe {
+    width: 40px; /* меньше на мобильных */
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+  <!-- Вертикальная полоска слева -->
+  <div class="stripe">
+    <img src="stripe.png" alt="Полоска">
+  </div>
+
+  <!-- Основной контент -->
+  <div class="content">
+
+    <div class="logo">
+      <img src="emblem.png" alt="Герб">
+    </div>
+
+    <h1>Таможенный терминал «Бенякони»</h1>
+
+    <div class="block">
+      <strong>Ваш номер очереди:</strong><br>
+      8
+    </div>
+
+    <div class="block">
+      <strong>Перед вами:</strong><br>
+      7
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="block">
+      <strong>Зарегистрирован:</strong><br>
+      8:13 / 18.12.2025
+    </div>
+
+    <div class="block">
+      <strong>Зарезервированное время:</strong><br>
+      11:30 / 18.12.2025
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="block">
+      <strong>Товар:</strong><br>
+      Mercedes-Benz CLA 250
+    </div>
+
+    <div class="block">
+      <strong>Описание:</strong><br>
+      WDD5J4HB4LN036171
+    </div>
+
+    <div class="footer">
+      <span>Информация предоставлена в электронном виде</span>
+      <img src="info-icon.png" alt="Печать">
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
