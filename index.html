@@ -49,18 +49,24 @@ h1 {
   border-top: 1px solid #cccccc;
 }
 
+/* Футер */
 .footer {
   margin-top: 35px;
   font-size: 14px;
   color: #555;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* Расстояние между картинкой и текстом */
+  flex-direction: column; /* текст сверху, картинка снизу */
+  align-items: flex-start;
+  gap: 10px;
 }
 
+.footer span {
+  z-index: 1;
+}
+
+/* Картинка печати под текстом */
 .footer img {
-  max-width: 1000px; /* увеличили в 10 раз */
+  max-width: 400px; /* размер печати */
   height: auto;
 }
 
@@ -75,11 +81,8 @@ h1 {
   .block {
     font-size: 16px;
   }
-  .footer {
-    gap: 5px;
-  }
   .footer img {
-    max-width: 160px; /* увеличено в 10 раз от 16px */
+    max-width: 200px; /* уменьшено для мобильных */
   }
 }
 </style>
@@ -130,8 +133,8 @@ h1 {
   </div>
 
   <div class="footer">
-    <img src="info-icon.png" alt="Инфо">
     <span>Информация предоставлена в электронном виде</span>
+    <img src="info-icon.png" alt="Печать">
   </div>
 
 </div>
