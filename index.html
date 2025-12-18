@@ -9,13 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+/* Фон документа с вертикальной полоской слева */
 body {
-  background: #f0f0f0;
   margin: 0;
-  padding: 30px;
+  padding: 0;
   font-family: 'Source Serif 4', serif;
+  background: url('stripe.png') no-repeat left top; /* картинка с полоской */
+  background-size: auto 100%; /* растягиваем по высоте документа */
+  background-color: #f0f0f0; /* цвет фона на остальной части */
 }
 
+/* Контейнер с контентом */
 .page {
   max-width: 800px;
   margin: auto;
@@ -23,6 +27,8 @@ body {
   padding: 50px 40px;
   border: 1px solid #cfcfcf;
   text-align: center;
+  position: relative;
+  z-index: 1; /* чтобы был поверх фоновой картинки */
 }
 
 .logo img {
@@ -55,15 +61,14 @@ h1 {
   font-size: 14px;
   color: #555;
   display: flex;
-  flex-direction: column; /* текст сверху, картинка снизу */
-  align-items: center; /* центрируем по горизонтали */
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
-  text-align: center; /* центрируем текст */
+  text-align: center;
 }
 
-/* Картинка печати под текстом */
 .footer img {
-  max-width: 400px; /* размер печати на компьютере */
+  max-width: 400px;
   height: auto;
 }
 
@@ -79,7 +84,7 @@ h1 {
     font-size: 16px;
   }
   .footer img {
-    max-width: 200px; /* уменьшено для мобильных */
+    max-width: 200px;
   }
 }
 </style>
