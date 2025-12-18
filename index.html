@@ -14,7 +14,6 @@ body {
   margin: 0;
   padding: 30px;
   font-family: 'Source Serif 4', serif;
-  position: relative;
 }
 
 .page {
@@ -57,22 +56,12 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 10px; /* Расстояние между картинкой и текстом */
 }
 
 .footer img {
   max-width: 20px;
   height: auto;
-}
-
-/* Картинка в левом нижнем углу */
-.bottom-left-img {
-  position: fixed;
-  left: 5px; /* сместили ближе к левому краю */
-  bottom: 5px; /* немного выше нижнего края */
-  max-width: 60px; /* размер примерно как печать */
-  height: auto;
-  z-index: 1000; /* поверх всего */
 }
 
 /* Мобильная адаптация */
@@ -91,11 +80,6 @@ h1 {
   }
   .footer img {
     max-width: 16px;
-  }
-  .bottom-left-img {
-    max-width: 40px;
-    left: 3px;
-    bottom: 3px;
   }
 }
 </style>
@@ -151,9 +135,6 @@ h1 {
   </div>
 
 </div>
-
-<!-- Картинка в левом нижнем углу -->
-<img class="bottom-left-img" src="info-icon.png" alt="Печать">
 
 </body>
 </html>
