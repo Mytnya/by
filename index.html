@@ -9,66 +9,75 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+/* БАЗА */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: #f0f0f0;
   margin: 0;
-  padding: 20px;
+  padding: 16px;
+  background: #f0f0f0;
   font-family: 'Source Serif 4', serif;
 }
 
-/* Центральный блок */
+/* ЦЕНТРАЛЬНЫЙ БЛОК */
 .page {
   max-width: 800px;
-  margin: auto;
+  width: 100%;
+  margin: 0 auto;
   border: 1px solid #cfcfcf;
 
   background-image: url('stripe.png');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
 
   display: flex;
   justify-content: center;
 }
 
-/* Контент */
+/* КОНТЕНТ */
 .content {
   width: 100%;
-  padding: 45px 35px;
+  padding: clamp(24px, 4vw, 48px);
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
 }
 
-/* ЛОГОТИП — УМЕНЬШЕН НА 20% */
+/* ЛОГОТИП */
 .logo img {
-  max-width: 145px; /* было ~180px */
-  margin-bottom: 25px;
+  width: 100%;
+  max-width: 140px; /* ~20% меньше */
+  height: auto;
+  margin-bottom: 24px;
 }
 
-/* Заголовок */
+/* ЗАГОЛОВОК */
 h1 {
-  font-size: 22px;
+  font-size: clamp(18px, 2.5vw, 22px);
   margin-bottom: 22px;
 }
 
-/* Блоки текста */
+/* ИНФО-БЛОКИ */
 .block {
+  font-size: clamp(15px, 2.2vw, 17px);
   margin-bottom: 16px;
-  font-size: 17px;
 }
 
 .block strong {
   font-weight: 600;
 }
 
-/* Разделители */
+/* РАЗДЕЛИТЕЛИ */
 .separator {
-  margin: 28px auto;
   width: 50%;
+  max-width: 260px;
+  margin: 24px auto;
   border-top: 1px solid #cccccc;
 }
 
-/* Футер */
+/* ФУТЕР */
 .footer {
   margin-top: 30px;
   font-size: 14px;
@@ -80,35 +89,19 @@ h1 {
 }
 
 .footer img {
+  width: 100%;
   max-width: 340px;
+  height: auto;
 }
 
-/* 📱 МОБИЛЬНАЯ АДАПТАЦИЯ */
-@media (max-width: 600px) {
+/* МОБИЛЬНЫЕ УСТРОЙСТВА */
+@media (max-width: 480px) {
   body {
-    padding: 10px;
-  }
-
-  .content {
-    padding: 28px 18px;
-  }
-
-  .logo img {
-    max-width: 120px; /* дополнительно уменьшаем на телефоне */
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    font-size: 19px;
-  }
-
-  .block {
-    font-size: 15px;
+    padding: 8px;
   }
 
   .separator {
     width: 65%;
-    margin: 22px auto;
   }
 
   .footer img {
